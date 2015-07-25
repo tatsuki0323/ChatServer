@@ -71,7 +71,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 <configuration>
 <archive>
 <manifest>
-<mainClass>com.github.chatServer.Main</mainClass>
+<mainClass>com.github.chatServer.ChatServer</mainClass>
 <addClasspath>true</addClasspath>
 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 </manifest>
