@@ -1,3 +1,5 @@
+package com.github.chatServer;
+
 import java.io.*;
 import java.net.*;
 
@@ -10,10 +12,6 @@ public class ChatClientHandler extends Thread{
         this.socket = socket;
     }
 
-    /**
-     * 並列実行を行う時に事項されるメソッド
-     */
-     
     public void run(){
         try{
             open();
@@ -29,9 +27,6 @@ public class ChatClientHandler extends Thread{
         }
     }
 
-    /**
-     * クライアントとのデータのやり取りを行うストリームを開くメソッド
-     */
     public void open() throws IOException{
         in = new BufferedReader(
             new InputStreamReader(socket.getInputStream())
@@ -40,27 +35,18 @@ public class ChatClientHandler extends Thread{
             new OutputStreamWriter(socket.getOutputStream())
         );
     }
-    /**
-     * クライアントからデータを受け取るメソッド
-     */
     public String receive() throws IOException{
         String line = in.readLine();
         System.out.println(line);
         return line;
     }
 
-    /**
-     * クライアントにデータを送信するメソッド
-     */   
     public void send(String message) throws IOException{
         out.write(message);
         out.write("\r\n");
         out.flush();
     }
 
-    /**
-     * クライアントとの接続を閉じるメソッド
-     */
     public void close(){
         if(in != null){
             try{
