@@ -1,0 +1,9 @@
+.DS_store
+src/.DS_store
+src/main/.DS_store
+src/main/java/.DS_store
+src/main/java/com/.DS_store
+src/main/java/com/github/.DS_store
+src/main/java/com/github/cahtServer.DS_store
+
+*.DS_store
